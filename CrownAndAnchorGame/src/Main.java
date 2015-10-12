@@ -13,6 +13,7 @@ public class Main {
 
         Player player = new Player("Fred", 100);
         Game game = new Game(d1, d2, d3);
+       
         List<DiceValue> cdv = game.getDiceValues();
 
         int totalWins = 0;
@@ -46,10 +47,12 @@ public class Main {
                 			turn, player.getName(), bet, pick); 
                 	
                 	int winnings = game.playRound(player, pick, bet);
-                    cdv = game.getDiceValues();
+                    
+                	cdv = game.getDiceValues();
                     
                     System.out.printf("Rolled %s, %s, %s\n",
                     		cdv.get(0), cdv.get(1), cdv.get(2));
+        
                     
                     if (winnings > 0) {
 	                    System.out.printf("%s won %d, balance now %d\n\n",

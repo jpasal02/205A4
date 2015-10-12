@@ -5,6 +5,7 @@ import java.util.Random;
 public enum DiceValue {
 	CROWN, ANCHOR, HEART, DIAMOND, CLUB, SPADE;
 	
+	
 	private static Random RANDOM = new Random();
 	
 	private static final Map<DiceValue, String> VALUE_REPR_MAP= new HashMap<DiceValue, String>();
@@ -22,8 +23,8 @@ public enum DiceValue {
 	}
 	
 	public static DiceValue getRandom() {
-		int random = RANDOM.nextInt(DiceValue.SPADE.ordinal());
+		int random = RANDOM.nextInt(DiceValue.getRandom().ordinal());
 		return values()[random];
 	}
-	
 }
+	

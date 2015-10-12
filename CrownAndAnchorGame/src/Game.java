@@ -21,6 +21,7 @@ public class Game {
 		for (Dice d : dice) {
 			values.add(d.getValue());
 		}
+		//return Collections.unmodifiableList(values);
 		return Collections.unmodifiableList(values);
 	}	
 	
