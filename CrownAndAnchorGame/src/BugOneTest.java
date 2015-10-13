@@ -23,17 +23,35 @@ public class BugOneTest {
 	@Test     //testing to see if player recieves correct money for 1 card match
 	public void testOneCardMatch() {
 		
+		when(mockD1_.getValue()).thenReturn(DiceValue.SPADE);
+		when(mockD2_.getValue()).thenReturn(DiceValue.CROWN);
+		when(mockD3_.getValue()).thenReturn(DiceValue.DIAMOND);
+		
+		game_ = new Game(mockD1_, mockD2_, mockD3_);
+		
 		fail("Not yet implemented");
 	}
 	
 	@Test    //testing to see if player recieves correct money for 2 card match
 	public void testTwoCardMatch() {
 		
+		when(mockD1_.getValue()).thenReturn(DiceValue.SPADE);
+		when(mockD2_.getValue()).thenReturn(DiceValue.SPADE);
+		when(mockD3_.getValue()).thenReturn(DiceValue.DIAMOND);
+		
+		game_ = new Game(mockD1_, mockD2_, mockD3_);
+		
 		fail("Not yet implemented");
 	}
 	
 	@Test    //testing to see if player recieves correct money for 3 card match
 	public void testThreeCardMatch() {
+		
+		when(mockD1_.getValue()).thenReturn(DiceValue.SPADE);
+		when(mockD2_.getValue()).thenReturn(DiceValue.SPADE);
+		when(mockD3_.getValue()).thenReturn(DiceValue.SPADE);
+		
+		game_ = new Game(mockD1_, mockD2_, mockD3_);
 		
 		fail("Not yet implemented");
 	}
