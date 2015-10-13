@@ -47,7 +47,6 @@ public class Main {
                 			turn, player.getName(), bet, pick); 
                 	
                 	int winnings = game.playRound(player, pick, bet);
-                    
                 	cdv = game.getDiceValues();
                     
                     System.out.printf("Rolled %s, %s, %s\n",
