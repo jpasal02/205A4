@@ -29,6 +29,7 @@ public class BugOneTest {
 		
 		game_ = new Game(mockD1_, mockD2_, mockD3_);
 		
+		System.out.println("Players balce is:" + player_.getBalance());
 		DiceValue pick = DiceValue.SPADE;
 		int balance = player_.getBalance();
 		int bet = 5; 
@@ -48,7 +49,7 @@ public class BugOneTest {
 		assertEquals(5, winnings);
 		
 		
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 	
 	@Test    //testing to see if player recieves correct money for 2 card match
