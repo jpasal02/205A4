@@ -29,21 +29,17 @@ public class BugOneTest {
 		
 		game_ = new Game(mockD1_, mockD2_, mockD3_);
 		
-		System.out.println("Players balce is:" + player_.getBalance());
+		System.out.println("Players balance is: " + player_.getBalance());
 		DiceValue pick = DiceValue.SPADE;
-		int balance = player_.getBalance();
 		int bet = 5; 
-		int min = (balance - bet);
 		int winnings = game_.playRound(player_, pick, bet);
 		
 		System.out.println("The player is: " + player_.getName());
 	    System.out.println("The bet amount is: " + bet);
 	    System.out.println("The player picked: " + pick);
 	   
-	    System.out.println(min);
-	    System.out.println(game_.getDiceValues());
-	    System.out.println(winnings);
-	    System.out.println(winnings + bet);
+	    System.out.println("Dice values are: " + game_.getDiceValues());
+	    System.out.println("Player wins " + winnings);
 	    System.out.println("The players balance is: " + player_.getBalance());
 		
 		assertEquals(5, winnings);
