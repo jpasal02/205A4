@@ -18,7 +18,6 @@ public class BugThreeTest {
 	public void setUp() throws Exception {
 		
 		player_ = new Player("Robbert", 20);
-		int winnings = 5;
 		player_.setLimit(0);
 		
 		mockD1_ =  mock(Dice.class);
@@ -77,6 +76,7 @@ public class BugThreeTest {
        
         //List<DiceValue> cdv = game_.getDiceValues();
         game_ = new Game(mockD1_, mockD2_, mockD3_);
+        DiceValue pick = DiceValue.getRandom();
         List<DiceValue> cdv = game_.getDiceValues();
         
        
@@ -100,7 +100,7 @@ public class BugThreeTest {
                 while (player.balanceExceedsLimitBy(bet) && player.getBalance() < 200)
                 {
                     turn++;                    
-                	DiceValue pick = DiceValue.getRandom();
+                	//DiceValue pick = DiceValue.getRandom();
                    
                 	System.out.printf("Turn %d: %s bet %d on %s\n",
                 			turn, player.getName(), bet, pick); 
