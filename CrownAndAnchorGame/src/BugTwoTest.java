@@ -49,9 +49,6 @@ public class BugTwoTest {
 		
 		assertEquals(player_.balanceExceedsLimitBy(bet), false);
 		
-		
-		
-		//fail("Not yet implemented");
 	}
 
 }
