@@ -74,7 +74,7 @@ public class BugThreeTest {
 		when(mockD2_.getValue()).thenReturn(DiceValue.getRandom());
 		when(mockD3_.getValue()).thenReturn(DiceValue.getRandom());
        
-        //List<DiceValue> cdv = game_.getDiceValues();
+        
         game_ = new Game(mockD1_, mockD2_, mockD3_);
         DiceValue pick = DiceValue.getRandom();
         List<DiceValue> cdv = game_.getDiceValues();
@@ -136,7 +136,8 @@ public class BugThreeTest {
             
             float ratio = (totalWins * 100) / (totalWins + totalLosses);
             System.out.println("WINS:	" + winCount +" LOSE: " +loseCount + "	 RATIO:		"+ ratio);
-            assertTrue(ratio > 0.30 && ratio < 0.50);
+           
+            assertTrue(ratio > 0.35 && ratio < 0.50);
 		
 	}
 	
