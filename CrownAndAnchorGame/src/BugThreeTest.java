@@ -11,7 +11,6 @@ public class BugThreeTest extends TestCase {
 
 	private static Game game_; 
 	private static Player player_; 
-	private static Dice mockD1_, mockD2_, mockD3_;
 
 	@Before
 	public void setUp() throws Exception {
