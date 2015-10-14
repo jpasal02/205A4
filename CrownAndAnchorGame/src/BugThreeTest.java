@@ -1,6 +1,3 @@
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 import java.util.List;
 
@@ -28,59 +25,11 @@ public class BugThreeTest extends TestCase {
 
 	@Test
 	public void testRatioWinLose() {
-		//		int bet = 5;
-		//		int winCount = 0; 
-		//		int loseCount = 0;
-		//		//DiceValue pick = DiceValue.getRandom();
-		//
-		//		when(mockD1_.getValue()).thenReturn(DiceValue.getRandom());
-		//		when(mockD2_.getValue()).thenReturn(DiceValue.getRandom());
-		//		when(mockD3_.getValue()).thenReturn(DiceValue.getRandom());
-		//		
-		//		
-		//		DiceValue pick = DiceValue.getRandom();
-		//		game_ = new Game(mockD1_, mockD2_, mockD3_);
-		//		
-		//		player_.takeBet(5);
-		//		
-		//		int winnings_ = game_.playRound(player_, pick, bet);
-		//		
-		//		if (winnings_ > 0){
-		//			winCount++;
-		//		}
-		//		else
-		//		{
-		//			loseCount++;
-		//		}
-		//		
-		//		int gamesPlayed = 100;
-		//		
-		//		float ratio = (winCount * 100) / (winCount + loseCount);
-		//		System.out.println("WINS:	" + winCount +" LOSE: " +loseCount + "	 RATIO:		"+ ratio);
-		//		
-		//		assertTrue(ratio > 0.30 && ratio < 0.50);
-		//		
-		//	}
-		//
-		//}
-		//		mockD1_ =  mock(Dice.class);
-		//		mockD2_ = mock(Dice.class);
-		//		mockD3_ = mock(Dice.class);
-		//		
-		//		mockD1_.roll();
-		//		mockD2_.roll();
-		//		mockD3_.roll();
-		//		
-		//		when(mockD1_.getValue()).thenReturn(DiceValue.getRandom());
-		//		when(mockD2_.getValue()).thenReturn(DiceValue.getRandom());
-		//		when(mockD3_.getValue()).thenReturn(DiceValue.getRandom());
 
 		Dice d1 = new Dice();
 		Dice d2 = new Dice();
 		Dice d3 = new Dice();
 
-
-		//List<DiceValue> cdv = game_.getDiceValues();
 		game_ = new Game(d1, d2, d3);
 		DiceValue pick = DiceValue.getRandom();
 		List<DiceValue> cdv = game_.getDiceValues();
