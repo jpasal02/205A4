@@ -18,8 +18,6 @@ public class BugThreeTest extends TestCase {
 		player_ = new Player("Robbert", 20);
 		player_.setLimit(0);
 
-
-
 	}
 
 	@Test
@@ -32,8 +30,6 @@ public class BugThreeTest extends TestCase {
 		game_ = new Game(d1, d2, d3);
 		DiceValue pick = DiceValue.getRandom();
 		List<DiceValue> cdv = game_.getDiceValues();
-
-
 
 		int totalWins = 0;
 		int totalLosses = 0;
@@ -98,6 +94,10 @@ public class BugThreeTest extends TestCase {
 		System.out.println("WINS:	" + winCount +" LOSE: " +loseCount + "	 RATIO:		"+ ratio);
 		assertTrue(ratio > 0.40);
 		assertTrue(ratio < 0.45);
+		
+		
+		/** This assert fails (now) but worked when the code was wrong*/
+		// assertTrue(ratio > 50);
 
 
 	}

@@ -49,6 +49,9 @@ public class BugOneTest {
 		
 		assertEquals(5, winnings);
 		
+		/** This assert fails (now) but worked when the code was wrong*/	
+		//assertEquals(0, winnings); 
+		
 		
 	}
 	
@@ -79,6 +82,9 @@ public class BugOneTest {
 		
 		assertEquals(10, winnings);
 		
+		/** This assert fails (now) but worked when the code was wrong*/	
+		//assertEquals(5, winnings); 
+		
 	}
 	
 	@Test    //testing to see if player recieves correct money for 3 card match
@@ -106,6 +112,9 @@ public class BugOneTest {
 	    System.out.println("The players balance is: " + player_.getBalance());
 		
 		assertEquals(15, winnings);
+		
+		/** This assert fails (now) but worked when the code was wrong*/	
+		//assertEquals(10, winnings); 
 	}
 	
 

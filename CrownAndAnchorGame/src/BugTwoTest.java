@@ -22,9 +22,12 @@ public class BugTwoTest {
 		player_ = new Player("Joe", 5); //Does not exceed limit 
 		System.out.println("player: " + player_.getName());
 		System.out.println("Balance: " + player_.getBalance());
-		System.out.println("Balance < limit " + player_.balanceExceedsLimitBy(bet));
+		System.out.println("Balance < limit " + player_.balanceExceedsLimitBy(bet)); 	
 		
 		assertEquals(player_.balanceExceedsLimitBy(bet), true);
+		
+		/** This assert fails (now) but worked when the code was wrong*/	
+		// assertEquals(player_.balanceExceedsLimitBy(bet, false);
 		
 		player_ = new Player("Joe", 10); //Does not exceed limit
 		System.out.println("player: " + player_.getName());
@@ -48,6 +51,9 @@ public class BugTwoTest {
 		System.out.println("Balance < limit " + player_.balanceExceedsLimitBy(bet));
 		
 		assertEquals(player_.balanceExceedsLimitBy(bet), false);
+		
+		/** This assert fails (now) but worked when the code was wrong*/	
+		// assertEquals(player_.balanceExceedsLimitBy(bet, false); 
 		
 	}
 
