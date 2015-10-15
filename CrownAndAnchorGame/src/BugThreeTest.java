@@ -1,4 +1,6 @@
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import junit.framework.TestCase;
@@ -30,6 +32,9 @@ public class BugThreeTest extends TestCase {
 		game_ = new Game(d1, d2, d3);
 		DiceValue pick = DiceValue.getRandom();
 		List<DiceValue> cdv = game_.getDiceValues();
+		
+		boolean wasSpadePicked = false;
+		boolean wasSpadeRolled = false; 
 
 		int totalWins = 0;
 		int totalLosses = 0;
@@ -38,8 +43,6 @@ public class BugThreeTest extends TestCase {
 		int loseCount = 0;
 
 		for (int i = 0; i < 100; i++)
-
-
 
 		{
 
@@ -57,12 +60,30 @@ public class BugThreeTest extends TestCase {
 			{
 				turn++;                    
 				pick = DiceValue.getRandom();
+				
+				/**
+				 * This line was commented out to see if asserttrue pick spade 
+ 				   fail (line sets pick to anchor so assert fails) Test. 
+				 */
+				//pick = DiceValue.ANCHOR;
+				
+				
+				if(!wasSpadePicked) {
+					wasSpadePicked = pick == DiceValue.SPADE;
+				}
 
 				System.out.printf("Turn %d: %s bet %d on %s\n",
 						turn, player.getName(), bet, pick); 
 
 				int winnings = game_.playRound(player, pick, bet);
 				cdv = game_.getDiceValues();
+				
+				/** This line is to test the roll of spade fail (commented out so it passes) */
+			//	cdv = new ArrayList<DiceValue>(Arrays.asList(new DiceValue[]{DiceValue.ANCHOR, DiceValue.ANCHOR, DiceValue.ANCHOR}));
+				
+				if(!wasSpadeRolled) {
+					wasSpadeRolled = (cdv.get(0) == DiceValue.SPADE) || (cdv.get(1) == DiceValue.SPADE) || (cdv.get(2) == DiceValue.SPADE);
+				}
 
 				System.out.printf("Rolled %s, %s, %s\n",
 						cdv.get(0), cdv.get(1), cdv.get(2));
@@ -94,6 +115,11 @@ public class BugThreeTest extends TestCase {
 		System.out.println("WINS:	" + winCount +" LOSE: " +loseCount + "	 RATIO:		"+ ratio);
 		assertTrue(ratio > 0.40);
 		assertTrue(ratio < 0.45);
+		System.out.println("was spade picked atleast once: " + wasSpadePicked);
+		System.out.println("was spade rolled atleast once: " + wasSpadeRolled);
+		assertTrue(wasSpadePicked);
+		assertTrue(wasSpadeRolled);
+		
 		
 		
 		/** This assert fails (now) but worked when the code was wrong*/
